@@ -1,116 +1,145 @@
-# Minimal Public Reproduction Repository (`paper-repro`)
 
-## 1) 项目标题
+# Reproducible Comparative Study of GA-PSO and Baseline Metaheuristics for Constrained Operational Optimization of Radial Distribution Networks
 
-面向论文复现的最小公开仓库（Minimal Public Reproduction Repository）。
+This repository provides the public reproducibility package for the study:
 
-## 2) 与论文标题对应说明
+**Reproducible Comparative Study of GA-PSO and Baseline Metaheuristics for Constrained Operational Optimization of Radial Distribution Networks**
 
-本仓库对应论文：`<FINAL_PAPER_TITLE_TO_BE_CONFIRMED>`（最终标题待作者在发布前回填）。
+The repository contains the source code, configuration files, random seeds, redacted/public benchmark assets, result tables, and figure-generation scripts required to reproduce the main comparative experiments reported in the paper.
 
-本仓库仅包含“可公开、可审计、可最小复现”的实验资产，聚焦论文中的关键结果复核与流程透明化。
+## Authors
 
-## 3) 项目简介（用于复现实验）
+- **Qiu Hong**
+  North China Electric Power University (Beijing), Beijing, China
+  Guangzhou Power Supply Bureau, China Southern Power Grid, Guangzhou, China
+  ORCID: 0009-0001-4785-6637
 
-- 提供 IEEE33 / IEEE69 的公开可复现配置、种子与结果表。
-- 提供 BaituF8 的脱敏配置摘要与汇总结果（不含原始敏感 feeder 数据）。
-- 提供关键论文表格 `Table A/B/C/D` 与 PF-call budget fairness validation 公开摘要。
-- 提供最小可执行 CLI 接口，用于：
-  - 查看配置
-  - 查看固定种子
-  - 按系统筛选结果摘要
-  - 校验 PF-call budget fairness
-  - 重建/导出关键表（不重跑实验）
+- **Ximing Wang**
+  North China Electric Power University (Baoding), Baoding City, Hebei Province, China
 
-## 4) 环境要求（Python 版本 + 主要依赖）
+## Repository URL
 
-- Python: `>=3.10`（建议 `3.11+`）
-- 主要依赖见 `requirements.txt`：
-  - `PyYAML`
-  - `numpy`
-  - `scipy`
+https://github.com/hqhighboy/epsr_public_release
 
-## 5) 安装步骤
+## Scope of this public release
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-python -m pip install -U pip
-python -m pip install -r requirements.txt
-```
+This public release is intended to support computational reproducibility of the comparative study. It includes:
 
-## 6) 运行方式（IEEE33 / IEEE69 / BaituF8 脱敏）
+- source code for GA, PSO, DE, GA-PSO, MOEA/D, and NSGA-III based experiments
+- configuration files for the public test systems
+- random seed files used for controlled repeated experiments
+- public/redacted benchmark descriptions
+- scripts for experiment execution, summary recomputation, and statistical testing
+- result tables and figures included in or derived for the manuscript
 
-> 说明：该公开仓库默认使用随仓结果进行复核，不触发大规模实验重跑。
+This repository does **not** include confidential operational data. Any non-public feeder information has been removed, anonymized, or replaced with redacted/public equivalents.
 
-```bash
-# IEEE33
-python src/main_experiment.py --system IEEE33 --action summarize
+## Repository structure
 
-# IEEE69
-python src/main_experiment.py --system IEEE69 --action summarize
+.
+├─ src/                  # core algorithm implementations and evaluation logic
+├─ scripts/              # experiment runners, statistics, and artifact generation scripts
+├─ config/               # experiment configuration files
+├─ data/                 # public or redacted benchmark data descriptions
+├─ seeds/                # random seeds for reproducible repeated runs
+├─ results/
+│  ├─ tables/            # manuscript-ready tables
+│  ├─ figures/           # manuscript-ready figures
+│  └─ fairness_check/    # auxiliary validation and fairness-check outputs
+├─ docs/                 # release notes, redaction notes, and reproduction guide
+├─ supplementary/        # supplementary tables and ancillary assets
+├─ requirements.txt
+├─ CITATION.cff
+├─ LICENSE
+└─ .zenodo.json
 
-# BaituF8 脱敏
-python src/main_experiment.py --system BaituF8-redacted --action summarize
-```
+## Environment
 
-也可查看配置和种子：
+Recommended environment:
 
-```bash
-python src/main_experiment.py --system IEEE33 --action show-config
-python src/main_experiment.py --system IEEE33 --action show-seeds
-```
+- Python 3.10 or newer
+- Windows, Linux, or macOS
+- A clean virtual environment is recommended
 
-## 7) 如何生成关键表（Table A/B/C/D）
+Install dependencies:
 
-关键表已随仓提供在 `results/`。如需按公开资产重新导出（不重跑实验）：
+pip install -r requirements.txt
 
-```bash
-python src/main_experiment.py --action rebuild-tables --output results
-```
+## Reproducibility workflow
 
-输出文件：
+A typical workflow is:
 
-- `results/Table_A_System_and_Config.csv`
-- `results/Table_B_Algorithm_Settings.csv`
-- `results/Table_C_Performance_Summary.csv`
-- `results/Table_D_Statistical_Tests.csv`
+1. create and activate a Python environment
+2. install dependencies from requirements.txt
+3. inspect the benchmark and configuration files under config/ and data/
+4. run the experiments using the scripts in scripts/
+5. recompute summaries and statistical tests
+6. compare generated outputs with the released tables and figures
 
-## 8) 数据说明（IEEE 公开、BaituF8 仅脱敏）
+## Example commands
 
-- IEEE33 / IEEE69：提供公开复现所需配置摘要、固定种子与结果表。
-- BaituF8：仅公开脱敏后的配置摘要、变量维度/类型/边界与汇总结果。
-- 不公开内容：原始工程 feeder 拓扑明细、可识别设备/实体信息、运行级敏感原始记录。
+Run the main experiments:
 
-## 9) 复现声明
+python scripts/run_experiments.py
 
-- 固定 seed：见 `seeds/*.csv`
-- run-level logging：由原实验链路导出的 run-level 证据已做公开分级处理
-- PF-call budget fairness validation：见 `results/fairness_check/`
-- 本公开仓库不修改原项目算法逻辑、评估流程、随机控制与缓存行为；不重跑大规模实验
+Run the PF-budget experiment:
 
-### 关于 MOEA/D 与 NSGA-III 接口说明
+python scripts/run_pf_budget_experiment.py
 
-- `src/moead.py` 与 `src/nsga3.py` 提供公开复现实验接口/占位实现路径（可执行、可审计）。
-- 当前版本的公开复核以结果表复核为主（`results/Table_C_Performance_Summary.csv`、`results/Table_D_Statistical_Tests.csv`）。
-- 不在本仓库中伪造新结果。
+Recompute summary tables:
 
-## 10) 引用方式（论文 + Zenodo DOI 占位）
+python scripts/recompute_summary.py
 
-### 论文引用（占位）
+Run statistical tests:
 
-```text
-<Authors>. <FINAL_PAPER_TITLE_TO_BE_CONFIRMED>. <Journal>, <Year>.
-```
+python scripts/stat_tests.py
 
-### 仓库/数据归档引用（Zenodo DOI 占位）
+Generate paper artifacts:
 
-```text
-<Authors> (2026). Minimal Public Reproduction Repository (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
-```
+python scripts/generate_paper_artifacts.py
 
-发布后请将 DOI 正式号回填到：
+## Released assets
 
-- `README.md`
-- `CITATION.cff`
-- 论文 Data Availability Statement（见 `docs/github_zenodo_release.md`）
+The public release includes the following categories of assets:
+
+- algorithm source code and evaluation modules
+- benchmark configuration files
+- released seed lists for controlled repeated runs
+- released summary tables and figure files
+- auxiliary fairness-check outputs
+- redaction notes and reproducibility documentation
+
+Where benchmark assets are redacted, the repository documents the released boundary explicitly and avoids disclosure of confidential operational information.
+
+## Reproduction notes
+
+Please consult the following documentation first:
+
+- docs/reproduction_guide.md
+- docs/pre_release_checklist.md
+- docs/github_zenodo_release.md
+- docs/baituf8_redaction.md
+
+These files explain the released asset boundaries, redaction logic, and recommended reproduction procedure.
+
+## Data availability
+
+The repository contains public and redacted materials sufficient to support computational reproducibility of the reported benchmark comparisons. Confidential operational data are not distributed.
+
+## Citation
+
+If you use this repository, please cite the associated paper and this software release.
+
+Citation metadata are provided in CITATION.cff.
+
+## License
+
+This repository is released under the MIT License. See LICENSE for details.
+
+## Zenodo archive
+
+A Zenodo DOI will be added after the first archived release is created.
+
+## Contact
+
+For questions regarding reproducibility or repository issues, please use the GitHub repository issue tracker.
