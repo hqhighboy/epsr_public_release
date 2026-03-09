@@ -1,20 +1,25 @@
 cff-version: 1.2.0
-title: "Minimal Public Reproduction Repository for <FINAL_PAPER_TITLE_TO_BE_CONFIRMED>"
-message: "If you use this repository, please cite both the paper and this archived repository."
+title: "Reproducible Comparative Study of GA-PSO and Baseline Metaheuristics for Constrained Operational Optimization of Radial Distribution Networks"
+message: "If you use this repository, please cite the associated paper and this software release."
 type: software
 authors:
-  - family-names: "<AUTHOR_FAMILY_NAME_1>"
-    given-names: "<AUTHOR_GIVEN_NAME_1>"
-    affiliation: "<AFFILIATION_1>"
-  - family-names: "<AUTHOR_FAMILY_NAME_2>"
-    given-names: "<AUTHOR_GIVEN_NAME_2>"
-    affiliation: "<AFFILIATION_2>"
-abstract: >-
-  Public minimal reproduction package for IEEE33/IEEE69 and redacted BaituF8
-  results, including fixed seeds, run-level logging evidence, key paper tables,
-  and PF-call budget fairness validation summary.
-repository-code: "https://github.com/<ORG_OR_USER>/<REPO_NAME>"
-version: "v1.0.0"
-date-released: "2026-03-06"
-doi: "10.5281/zenodo.XXXXXXX"
-
+  - family-names: "Qiu"
+    given-names: "Hong"
+    affiliation: "North China Electric Power University (Beijing), Beijing, China; Guangzhou Power Supply Bureau, China Southern Power Grid, Guangzhou, China"
+    orcid: "https://orcid.org/0009-0001-4785-6637"
+  - family-names: "Wang"
+    given-names: "Ximing"
+    affiliation: "North China Electric Power University (Baoding), Baoding City, Hebei Province, China"
+repository-code: "https://github.com/hqhighboy/epsr_public_release"
+url: "https://github.com/hqhighboy/epsr_public_release"
+license: "MIT"
+abstract: "Public reproducibility package for a comparative study of GA-PSO and baseline metaheuristics for constrained operational optimization of radial distribution networks."
+keywords:
+  - "metaheuristics"
+  - "GA-PSO"
+  - "distribution network"
+  - "radial distribution networks"
+  - "operational optimization"
+  - "reproducibility"
+version: "1.0.0"
+date-released: 2026-03-09

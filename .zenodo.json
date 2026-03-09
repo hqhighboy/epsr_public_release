@@ -1,28 +1,26 @@
 {
-  "title": "Minimal Public Reproduction Repository for <FINAL_PAPER_TITLE_TO_BE_CONFIRMED>",
-  "description": "Public minimal reproduction package with IEEE33/IEEE69 reproducible assets and redacted BaituF8 summary-only materials.",
+  "title": "Reproducible Comparative Study of GA-PSO and Baseline Metaheuristics for Constrained Operational Optimization of Radial Distribution Networks",
+  "description": "Public reproducibility package for a comparative study of GA-PSO and baseline metaheuristics for constrained operational optimization of radial distribution networks. The repository includes source code, configurations, seeds, redacted/public benchmark assets, result tables, and figure-generation scripts required to reproduce the main comparative experiments reported in the associated manuscript.",
   "creators": [
     {
-      "name": "<AUTHOR_FAMILY_NAME_1>, <AUTHOR_GIVEN_NAME_1>",
-      "affiliation": "<AFFILIATION_1>",
-      "orcid": "0000-0000-0000-0000"
+      "name": "Qiu, Hong",
+      "affiliation": "North China Electric Power University (Beijing), Beijing, China; Guangzhou Power Supply Bureau, China Southern Power Grid, Guangzhou, China",
+      "orcid": "0009-0001-4785-6637"
     },
     {
-      "name": "<AUTHOR_FAMILY_NAME_2>, <AUTHOR_GIVEN_NAME_2>",
-      "affiliation": "<AFFILIATION_2>",
-      "orcid": "0000-0000-0000-0000"
+      "name": "Wang, Ximing",
+      "affiliation": "North China Electric Power University (Baoding), Baoding City, Hebei Province, China"
     }
   ],
   "license": "MIT",
-  "upload_type": "software",
   "keywords": [
-    "power distribution optimization",
-    "reproducibility",
-    "IEEE33",
-    "IEEE69",
-    "PF-call budget fairness"
+    "metaheuristics",
+    "GA-PSO",
+    "distribution network",
+    "radial distribution networks",
+    "operational optimization",
+    "reproducibility"
   ],
-  "version": "v1.0.0",
+  "upload_type": "software",
   "access_right": "open"
 }
-
