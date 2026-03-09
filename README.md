@@ -1,6 +1,8 @@
 
 # Reproducible Comparative Study of GA-PSO and Baseline Metaheuristics for Constrained Operational Optimization of Radial Distribution Networks
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18920852.svg)](https://doi.org/10.5281/zenodo.18920852)
+
 This repository provides the public reproducibility package for the study:
 
 **Reproducible Comparative Study of GA-PSO and Baseline Metaheuristics for Constrained Operational Optimization of Radial Distribution Networks**
@@ -12,7 +14,7 @@ The repository contains the source code, configuration files, random seeds, reda
 - **Qiu Hong**
   North China Electric Power University (Beijing), Beijing, China
   Guangzhou Power Supply Bureau, China Southern Power Grid, Guangzhou, China
-  ORCID: 0009-0001-4785-6637
+  ORCID: https://orcid.org/0009-0001-4785-6637 
 
 - **Ximing Wang**
   North China Electric Power University (Baoding), Baoding City, Hebei Province, China
