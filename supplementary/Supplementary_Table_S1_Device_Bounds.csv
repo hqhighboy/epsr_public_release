@@ -1,0 +1,13 @@
+System,Decision variable / device,Lower bound,Upper bound,Discretization / step,Unit,Remark
+IEEE33,Capacitor injection,0.0,300.0,Continuous; clipped to bounds,kvar,Optimized capacitor setting
+IEEE33,BESS active power,-300.0,300.0,Continuous; clipped to bounds,kW,Optimized active-power dispatch
+IEEE33,Tap ratio,0.95,1.05,Continuous encoding with bounded projection,p.u.,Applied to tap-control variables
+IEEE33,Topology switch variable,0.0,1.0,Binary thresholding at 0.5,-,Decoded as switching decision
+IEEE69,Capacitor injection,0.0,300.0,Continuous; clipped to bounds,kvar,Optimized capacitor setting
+IEEE69,BESS active power,-300.0,300.0,Continuous; clipped to bounds,kW,Optimized active-power dispatch
+IEEE69,Tap ratio,0.95,1.05,Continuous encoding with bounded projection,p.u.,Applied to tap-control variables
+IEEE69,Topology switch variable,0.0,1.0,Binary thresholding at 0.5,-,Decoded as switching decision
+BaituF8,Capacitor injection,0.0,300.0,Continuous; clipped to bounds,kvar,Config-consistent optimized bound
+BaituF8,BESS active power,-300.0,300.0,Continuous; clipped to bounds,kW,Config-consistent optimized bound
+BaituF8,Tap ratio,0.95,1.05,Continuous; clipped to bounds,p.u.,Config-consistent optimized bound
+BaituF8,Topology switch variable,0.0,1.0,Binary thresholding at 0.5,-,Decoded as switching decision

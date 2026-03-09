@@ -1,0 +1,26 @@
+system_id: IEEE33
+description: Public reproducible benchmark configuration for IEEE33.
+weights:
+  alpha: 0.45
+  beta: 0.30
+  gamma: 0.25
+budget:
+  population: 24
+  iterations: 55
+voltage_limits_pu: [0.95, 1.05]
+dimensions:
+  num_buses: 33
+  num_lines: 32
+  num_capacitors: 5
+  num_der: 4
+  num_bess: 2
+  num_topology_switches: 5
+baseline:
+  loss_base_kW: 185.6
+  vdev_base_pu: 0.038
+  cost_base_usd_per_year: 195102.72
+reproducibility:
+  fixed_seed_file: ../seeds/ieee33_seeds.csv
+  run_level_logging: true
+  pf_budget_fairness_summary: ../results/fairness_check/pf_budget_summary.csv
+

@@ -1,0 +1,4 @@
+system,num_buses,num_lines,num_capacitors,num_der,num_bess,alpha,beta,gamma,voltage_limits,power_flow_model,max_iterations
+IEEE33,33,32,5,4,2,0.45,0.3,0.25,"[0.95, 1.05]",SurrogatePF+consistency-check,55
+IEEE69,69,68,6,7,2,0.45,0.3,0.25,"[0.95, 1.05]",SurrogatePF+consistency-check,55
+BaituF8-redacted,33,32,6,8,2,0.45,0.3,0.25,"[0.95, 1.05]",SurrogatePF+consistency-check,55

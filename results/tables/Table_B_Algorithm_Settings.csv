@@ -1,0 +1,36 @@
+algorithm,parameter,symbol,value,variable_name,unit_or_scale,source_file,source_line,note
+GA,Population size,K,24,population,count,configs/paper.yaml,7,Global experiment setting shared by GA/PSO/GA-PSO
+PSO,Swarm size,K,24,population,count,configs/paper.yaml,7,PSO uses same unified population setting
+GA-PSO,Population size,K,24,population,count,configs/paper.yaml,7,Hybrid uses same unified population setting
+GA,Iterations,S,55,iterations,generations,configs/paper.yaml,8,Global experiment setting shared by GA/PSO/GA-PSO
+PSO,Iterations,S,55,iterations,iterations,configs/paper.yaml,8,Global experiment setting shared by GA/PSO/GA-PSO
+GA-PSO,Iterations,S,55,iterations,iterations,configs/paper.yaml,8,Global experiment setting shared by GA/PSO/GA-PSO
+GA,Selection pressure (tournament size),r,3,np.random.choice(..., size=3),count,extended_experiment.py,475
+PSO,Selection pressure (tournament size),r,not explicitly defined in repository,not explicitly defined in repository,N/A,N/A,N/A,PSO implementation does not use GA-style tournament/selection pressure r
+GA-PSO,Selection pressure (tournament size),r,not explicitly defined in repository,not explicitly defined in repository,N/A,N/A,N/A,Hybrid implementation samples 2 parents uniformly for GA child generation; no explicit r parameter symbol
+PSO,Inertia weight,w,w(t)=w_max-(w_max-w_min)*(t/max(1,iterations-1)),w; pso_w_max; pso_w_min,dimensionless,extended_experiment.py,545
+PSO,Inertia max,w,0.9,pso_w_max,dimensionless,extended_experiment.py,104,Endpoint of inertia schedule
+PSO,Inertia min,w,0.4,pso_w_min,dimensionless,extended_experiment.py,105,Endpoint of inertia schedule
+GA-PSO,Inertia weight,w,w(t)=w_max-(w_max-w_min)*(t/max(1,iterations-1)),w; pso_w_max; pso_w_min,dimensionless,extended_experiment.py,679
+GA-PSO,Inertia max,w,0.9,pso_w_max,dimensionless,extended_experiment.py,104,Endpoint reused from config dataclass
+GA-PSO,Inertia min,w,0.4,pso_w_min,dimensionless,extended_experiment.py,105,Endpoint reused from config dataclass
+GA,Inertia weight,w,not applicable in GA,not applicable in GA,N/A,N/A,N/A,GA operator stack has no inertia term
+PSO,Cognitive factor,c1,1.8,pso_c1,dimensionless,extended_experiment.py,106,Constant in velocity update (not time-varying)
+GA-PSO,Cognitive factor,c1,1.8,pso_c1,dimensionless,extended_experiment.py,106,Constant factor used in hybrid PSO component
+GA,Cognitive factor,c1,not applicable in GA,not applicable in GA,N/A,N/A,N/A,GA has no PSO cognitive coefficient
+PSO,Social factor,c2,1.8,pso_c2,dimensionless,extended_experiment.py,107,Constant in velocity update (not time-varying)
+GA-PSO,Social factor,c2,1.8,pso_c2,dimensionless,extended_experiment.py,107,Constant factor used in hybrid PSO component
+GA,Social factor,c2,not applicable in GA,not applicable in GA,N/A,N/A,N/A,GA has no PSO social coefficient
+GA,Crossover probability,p_c,0.85,ga_crossover_prob,probability [0,1],extended_experiment.py,102
+GA-PSO,Crossover probability,p_c,not explicitly defined in repository,not explicitly defined in repository,N/A,N/A,N/A,Hybrid child generation uses arithmetic blend without an explicit independent p_c gate
+PSO,Crossover probability,p_c,not applicable in PSO,not applicable in PSO,N/A,N/A,N/A,PSO has no crossover operator
+GA,Mutation probability,p_m,0.15,ga_mutation_prob,probability [0,1],extended_experiment.py,103
+GA-PSO,Mutation probability,p_m,0.105 (effective via 0.7*0.15),ga_mutation_prob * 0.7,probability [0,1],extended_experiment.py,672
+PSO,Mutation probability,p_m,not applicable in PSO,not applicable in PSO,N/A,N/A,N/A,PSO has no mutation operator
+GA,SBX operator,SBX,not explicitly defined in repository,uses arithmetic blend crossover,N/A,extended_experiment.py,480,Repository GA uses alpha-blend crossover not SBX
+GA,Polynomial mutation operator,Polynomial,not explicitly defined in repository,uses Gaussian perturbation mask,N/A,extended_experiment.py,488,Repository GA uses Gaussian mutation not polynomial mutation
+GA-PSO,SBX operator,SBX,not explicitly defined in repository,uses arithmetic blend in implementation,N/A,extended_experiment.py,665,Hybrid GA stage does not call SBX in this implementation
+GA-PSO,Polynomial mutation operator,Polynomial,not explicitly defined in repository,uses Gaussian perturbation mask,N/A,extended_experiment.py,672,Hybrid GA stage uses Gaussian perturbation instead of polynomial mutation
+GA,Library defaults (optimizer hyperparams),N/A,not explicitly defined in repository,not explicitly defined in repository,N/A,N/A,N/A,Custom in-repo implementation; no external GA library default involved
+PSO,Library defaults (optimizer hyperparams),N/A,not explicitly defined in repository,not explicitly defined in repository,N/A,N/A,N/A,Custom in-repo implementation; no external PSO library default involved
+GA-PSO,Library defaults (optimizer hyperparams),N/A,not explicitly defined in repository,not explicitly defined in repository,N/A,N/A,N/A,Custom in-repo implementation; no external hybrid library default involved

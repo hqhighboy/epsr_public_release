@@ -1,0 +1,51 @@
+system_id: BaituF8-redacted
+description: >-
+  Redacted configuration summary for the engineering feeder. Preserves
+  reproducibility-critical dimensions, variable types, and boundaries while
+  removing identifiable engineering entities.
+weights:
+  alpha: 0.45
+  beta: 0.30
+  gamma: 0.25
+budget:
+  population: 24
+  iterations: 55
+voltage_limits_pu: [0.95, 1.05]
+dimensions:
+  num_buses: 33
+  num_lines: 32
+  num_capacitors: 6
+  num_der: 8
+  num_bess: 2
+  num_topology_switches: 6
+variables:
+  capacitor_kvar:
+    type: continuous
+    range: [0.0, 300.0]
+  der_kw:
+    type: continuous
+    range: [0.0, 500.0]
+  bess_kw:
+    type: continuous
+    range: [-300.0, 300.0]
+  oltc_vr_tap:
+    type: continuous
+    range: [0.95, 1.05]
+  topology_switch:
+    type: binary-thresholded
+    range: [0.0, 1.0]
+baseline:
+  loss_base_kW: 198.9
+  vdev_base_pu: 0.041
+  cost_base_usd_per_year: 209083.68
+privacy:
+  raw_data_public: false
+  removed_items:
+    - real feeder identifiers
+    - entity/geography metadata
+    - engineering unit/entity naming conventions that can identify deployment site
+reproducibility:
+  fixed_seed_file: ../seeds/baituf8_seeds.csv
+  released_data_level: summary-only
+  fairness_check_summary: ../results/fairness_check/pf_budget_summary.csv
+

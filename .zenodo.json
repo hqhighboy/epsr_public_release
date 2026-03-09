@@ -1,0 +1,28 @@
+{
+  "title": "Minimal Public Reproduction Repository for <FINAL_PAPER_TITLE_TO_BE_CONFIRMED>",
+  "description": "Public minimal reproduction package with IEEE33/IEEE69 reproducible assets and redacted BaituF8 summary-only materials.",
+  "creators": [
+    {
+      "name": "<AUTHOR_FAMILY_NAME_1>, <AUTHOR_GIVEN_NAME_1>",
+      "affiliation": "<AFFILIATION_1>",
+      "orcid": "0000-0000-0000-0000"
+    },
+    {
+      "name": "<AUTHOR_FAMILY_NAME_2>, <AUTHOR_GIVEN_NAME_2>",
+      "affiliation": "<AFFILIATION_2>",
+      "orcid": "0000-0000-0000-0000"
+    }
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "keywords": [
+    "power distribution optimization",
+    "reproducibility",
+    "IEEE33",
+    "IEEE69",
+    "PF-call budget fairness"
+  ],
+  "version": "v1.0.0",
+  "access_right": "open"
+}
+

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Minimal Public Reproduction Repository for <FINAL_PAPER_TITLE_TO_BE_CONFIRMED>"
+message: "If you use this repository, please cite both the paper and this archived repository."
+type: software
+authors:
+  - family-names: "<AUTHOR_FAMILY_NAME_1>"
+    given-names: "<AUTHOR_GIVEN_NAME_1>"
+    affiliation: "<AFFILIATION_1>"
+  - family-names: "<AUTHOR_FAMILY_NAME_2>"
+    given-names: "<AUTHOR_GIVEN_NAME_2>"
+    affiliation: "<AFFILIATION_2>"
+abstract: >-
+  Public minimal reproduction package for IEEE33/IEEE69 and redacted BaituF8
+  results, including fixed seeds, run-level logging evidence, key paper tables,
+  and PF-call budget fairness validation summary.
+repository-code: "https://github.com/<ORG_OR_USER>/<REPO_NAME>"
+version: "v1.0.0"
+date-released: "2026-03-06"
+doi: "10.5281/zenodo.XXXXXXX"
+

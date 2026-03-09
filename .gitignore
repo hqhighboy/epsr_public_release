@@ -1,0 +1,15 @@
+.vscode/
+.venv/
+__pycache__/
+*.pyc
+*.log
+tmp/
+temp/
+cache/
+
+# Common build/test artifacts
+.pytest_cache/
+.mypy_cache/
+dist/
+build/
+
